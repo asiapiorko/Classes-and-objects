@@ -9,8 +9,6 @@ To find the description of the task please find the attached screenshot in the f
 
 ----------------------------------------------
 
-
-
 # Write the class Point as outlined in the instructions
 from math import sqrt
 

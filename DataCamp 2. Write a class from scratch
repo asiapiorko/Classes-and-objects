@@ -5,25 +5,7 @@ The most basic element of any visualization is a single point. In this exercise,
 
 ----------------------------------------------
 
-
-
-Define the class  Point that has:
-
-Two attributes, x and y - the coordinates of the point on the plane;
-A constructor that accepts two arguments, x and y, that initialize the corresponding attributes. These arguments should have default value of 0.0;
-A method distance_to_origin() that returns the distance from the point to the origin. The formula for that is 
-x
-2
-+
-y
-2
-. 
-A method reflect(), that reflects the point with respect to the x- or y-axis:
-accepts one argument axis,
-if axis="x" , it sets the y (not a typo!) attribute to the negative value of the y attribute,
-if axis="y", it sets the x attribute to the negative value of the x attribute,
-for any other value of axis, prints an error message. Reflection of a point with respect to y and x axes
-Note: You can choose to use sqrt() function from either the numpy or the mathpackage, but whichever package you choose, don't forget to import it before starting the class definition!
+To find the description of the task please find the attached screenshot in the folder
 
 ----------------------------------------------
 

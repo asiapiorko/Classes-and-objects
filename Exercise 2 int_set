@@ -89,4 +89,4 @@ class intSet(object):
         return newSet
     
     def __len__(self):
-        return len(self)
+        return len(self.vals)

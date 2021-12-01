@@ -35,6 +35,7 @@
 
 
 import string
+import string
 
 class Message:
     ### DO NOT MODIFY THIS METHOD ###
@@ -84,22 +85,21 @@ class Message:
                  another letter (string). 
         '''
         
-        self.shift = shift
-        self.dictionary_mapping = {}
+        lower_keys = list(string.ascii_lowercase)
+        lower_values = list(string.ascii_lowercase)
+        shift_lower_values = lower_values[shift:] + lower_values[:shift]
         
-        alphabet = string.ascii_lowercase + string.ascii_uppercase
-        number = 0 
+        upper_keys = list(string.ascii_uppercase)                 
+        upper_values = list(string.ascii_uppercase)
+        upper_shift_values = upper_values[shift:] + upper_values[:shift]
+
+        full_keys = lower_keys + upper_keys
+        full_values = shift_lower_values + upper_shift_values
+
+        self.shift_dict = dict(zip(full_keys, full_values))
         
-        for char in alphabet:
-    
-            if number < 25:
-                self.dictionary_mapping[char] = self.dictionary_mapping.get(char, number)
-                number += 1
-            else:
-                self.dictionary_mapping[char] = self.dictionary_mapping.get(char, number)
-                number = 0
-        
-        return self.dictionary_mapping
+        return self.shift_dict        
+         
     
     def apply_shift(self, shift):
         '''
@@ -114,19 +114,11 @@ class Message:
              down the alphabet by the input shift
         '''
         
-        self.shifted_text = {}
-        
-        for letter in self.message_text:
-            self.shifted_text[letter] = self.dictionary_mapping.get(letter, 0) + self.shift
-        return self.shifted_text.values()
-    
-        # 1. Create a new string with the values equal to the numbers from self.shifted_text.values()
-        # 2. For every element from self.shifted_text.values() take the equal value from self.dictionary_mapping
-        # 3. The key from self.dictionary_mapping append to the string
-        # 4. Return the value
-        
-        for i in self.shifted_text.values():
-            for i in self.dictionary_mapping.values():
-                print(self.dictionary_mapping.get(i))
-                
+        message_text = ''
+        for i in self.message_text:
+            for element in self.shift_dict.keys():
+                if i == element:
+                    message_text += self.shift_dict.get(i)
+        return message_text
+
 

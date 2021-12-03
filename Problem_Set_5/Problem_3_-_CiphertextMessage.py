@@ -55,8 +55,8 @@ class CiphertextMessage(Message):
         and the decrypted message text using that shift value
         '''
         wordList = loadWords()
-        
         result_list = []
+        
         #loop for checking every shift
         for i in range(26):
             shift = i

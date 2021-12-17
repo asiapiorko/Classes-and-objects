@@ -46,9 +46,10 @@ def applyF_filterG(L, f, g):
 
     # if element pass conditions than add them to new list
     for i in L:        
-        if g(f(i)) == True:
+        if g(f(i)) is True:
             new_list.append(i)
 
     if len(L) > 0:
         return max(L)
+    
     return 0

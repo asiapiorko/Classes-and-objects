@@ -17,8 +17,8 @@
 
 def deep_reverse(L):
     result = []
-    for i in L:
-        reversed = L[::-1]
+    
+    reversed = L[::-1]
     for e in reversed:
         result.append(e[::-1])
     return result

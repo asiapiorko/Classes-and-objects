@@ -16,9 +16,9 @@
 def flatten(aList):
     new_list = []
     
-    for values in aList:
-        if values != type([]):
-            new_list.append(values)
+    for value in aList:
+        if value is not list:
+            new_list.append(value)
         else: 
-            new_list.extend(flatten(values)) 
+            new_list.extend(flatten(item)) 
     return new_list

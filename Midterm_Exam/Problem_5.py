@@ -16,12 +16,12 @@
 #     # Your code here
     
 # First solution
-def dotProduct(listA, listB):
+def dot_product(list_a, list_b):
     list = []
     result = 0
     
-    for i in range(len(listA)):
-        result = listA[i] * listB[i]
+    for i in range(len(list_a)):
+        result = list_a[i] * list_b[i]
         list.append(result)
         for e in range(0, len(list)-1):
             result += list[e]
@@ -29,9 +29,9 @@ def dotProduct(listA, listB):
   
 #Improvement
 
-def dotProduct(listA, listB):
+def dot_product(list_a, list_b):
     result = 0
     
-    for i in range(len(listA)):
-        result += listA[i] * listB[i]
+    for i in range(len(list_a)):
+        result += list_a[i] * list_b[i]
     return result
